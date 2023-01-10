@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "repro": {
+      "implementation": "./src/repro.impl",
+      "schema": "./src/schema.json",
+      "description": "noop builder with a target option"
+    }
+  }
+}

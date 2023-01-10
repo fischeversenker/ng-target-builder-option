@@ -2,11 +2,8 @@
   "name": "target-builder-option",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build:builders": "tsc -p projects/builders/tsconfig.json",
+    "postbuild:builders": "cp projects/builders/src/schema.json dist/builders/src/schema.json && cp projects/builders/package.json projects/builders/builders.json dist/builders/"
   },
   "private": true,
   "dependencies": {

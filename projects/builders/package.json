@@ -1,0 +1,5 @@
+{
+  "name": "taly-builders",
+  "version": "0.0.1",
+  "builders": "./builders.json"
+}

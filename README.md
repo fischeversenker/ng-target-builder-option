@@ -1,27 +1,17 @@
-# TargetBuilderOption
+# Reproduction repository for issue with a `target` builder option
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This repository contains an app called `target-builder-option` from a new workspace (created with `ng new target-builder-option`) and
+a custom Angular Builder in `projects/builders`. The app was not changed after creating the workspace.
+The builder is set up as a local architect target called `repro` for the app.
 
-## Development server
+## Quick start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Install the dependencies with `npm install`
+- build the builder with `npm run build:builders`
+- run the local builder with `ng run target-builder-option:repro` 
+- see the error on the console: `Error: Invalid values: Argument: target, Given: "target-builder-option:repro", Choices: "app", "library"`
 
-## Code scaffolding
+## "Fixing" the problem
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Remove the `enum` property from the `target` property in file `projects/builders/src/schema.json`.
+Now rebuild the builder and rerun the architect to see that the error is now gone.

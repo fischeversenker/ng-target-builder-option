@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "target": {
+      "default": "app",
+      "enum": ["app", "library"],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

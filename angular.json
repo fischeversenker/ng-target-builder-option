@@ -10,6 +10,9 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "repro": {
+          "builder": "./dist/builders:repro"
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
